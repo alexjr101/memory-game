@@ -88,7 +88,6 @@ function checkMatch() {
         cards[optionOneID].setAttribute('src', 'images/question.png');
     }
     else if(cardsChosen[0] === cardsChosen[1]) {
-        alert('You found a match!');
         cards[optionOneID].setAttribute('src', 'images/blank.png');
         cards[optionTwoID].setAttribute('src', 'images/blank.png');
         cards[optionOneID].removeEventListener('click', flipCard);
@@ -97,12 +96,11 @@ function checkMatch() {
         score += 1;
         document.getElementById('result').innerHTML = score;
     } else {
-        alert('Sorry! Try again');
         cards[optionOneID].setAttribute('src', 'images/question.png');
         cards[optionTwoID].setAttribute('src', 'images/question.png');
     }
 
-    if (cardsWon.length == cardArray.length) {
+    if (cardsWon.length == cardArray.length / 2) {
         alert("Congratulations! You won!");
     }
     cardsChosen = [];
